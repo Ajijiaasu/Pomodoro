@@ -68,6 +68,6 @@ start_button.grid(column=0, row=3)
 reset_button = tk.Button(window, text="Reset", command=reset_timer)
 reset_button.grid(column=2, row=3)
 
-
 window.mainloop()
+
 
