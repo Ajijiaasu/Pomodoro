@@ -5,7 +5,7 @@ import math
 
 work = 25 * 60
 rest = 5 * 60
-longer_rest = 15 * 30
+longer_rest = 15 * 60
 
 reps = 0
 timer = None
@@ -56,7 +56,7 @@ window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg="black")
 
-title_label = Label(text="Timer", fg="green", font=("Lato", 24, "bold"), bg="black")
+title_label = Label(text="Timer", fg="white", font=("Lato", 24, "bold"), bg="black")
 title_label.grid(column=1, row=0)
 
 canvas = Canvas(width=200, height=224, bg="black", highlightthickness=0)
@@ -75,4 +75,5 @@ reset_button.grid(column=2, row=3)
 
 
 window.mainloop()
+
 
