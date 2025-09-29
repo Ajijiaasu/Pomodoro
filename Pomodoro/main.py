@@ -3,8 +3,10 @@ from tkinter import *
 import time
 import math
 
-down = 25 * 60
+work = 25 * 60
 rest = 5 * 60
+longer_rest = 15 * 30
+
 reps = 0
 timer = None
 
@@ -26,10 +28,13 @@ def start_timer():
                
     if reps % 2 == 0:
         count_down(rest)
-        title_label.config(text="Break", fg="green", font=("Lato", 24, "bold"), bg="black")
+        title_label.config(text="Break", fg="white", font=("Lato", 24, "bold"), bg="black")
+    elif reps % 4 == 0:
+        count_down(longer_rest)
+        title_label.config(text="Take a longer break.", fg="white", font=("Lato", 24, "bold"), bg="black")
     else: 
-        count_down(down)
-        title_label.config(text="Work", fg="green", font=("Lato", 24, "bold"), bg="black")
+        count_down(work)
+        title_label.config(text="Work", fg="white", font=("Lato", 24, "bold"), bg="black")
 
 def count_down(count):
     count_min = math.floor(count / 60)
@@ -68,6 +73,6 @@ start_button.grid(column=0, row=3)
 reset_button = tk.Button(window, text="Reset", command=reset_timer)
 reset_button.grid(column=2, row=3)
 
-window.mainloop()
 
+window.mainloop()
 
